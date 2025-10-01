@@ -86,6 +86,7 @@ export async function updatePerk(req, res, next) {
 
     const { value, error } = updateSchema.validate(req.body, {
       abortEarly: false,
+      noDefaults: true,
     });
     if (error) return res.status(400).json({ message: error.message });
 
